@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slideshow</title>
+  <style>
+    #gambar {
+      width: 500px;
+      height: 300px;
+      object-fit: cover;
+      border: 3px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>Slideshow</h2>
+  <img id="gambar" src="c:\Users\HW-11\Downloads\img1.jpg" />
+  <br><br>
+  <button onclick="prev()">Prev</button>
+  <button onclick="start()">Start slideshow</button>
+  <button onclick="stop()">Stop slideshow</button>
+  <button onclick="next()">Next</button>
+
+  <script>
+    const gambar = document.getElementById("gambar");
+    const gambarList = ["c:\Users\HW-11\Downloads\img1.jpg", "c:\Users\HW-11\Downloads\img2.jpg", "c:\Users\HW-11\Downloads\img3.jpg"]; // Ganti nama sesuai file kamu
+    let index = 0;
+    let timer;
+
+    function showGambar() {
+      gambar.src = gambarList[index];
+    }
+
+    function next() {
+      index = (index + 1) % gambarList.length;
+      showGambar();
+    }
+
+    function prev() {
+      index = (index - 1 + gambarList.length) % gambarList.length;
+      showGambar();
+    }
+
+    function start() {
+      timer = setInterval(next, 2000);
+    }
+
+    function stop() {
+      clearInterval(timer);
+    }
+  </script>
+</body>
+</html>

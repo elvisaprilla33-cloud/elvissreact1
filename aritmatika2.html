@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Model Google Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f3f4;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+    }
+    .form-card {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 320px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #202124;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #5f6368;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: #1a73e8;
+      box-shadow: 0 0 2px #1a73e8;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1765cc;
+    }
+    #hasil {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #202124;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-card">
+    <h2>Kalkulator Sederhana</h2>
+
+    <label for="nilai1">Angka pertama</label>
+    <input type="text" id="nilai1" placeholder="Masukkan angka pertama">
+
+    <label for="operasi">Pilih operasi</label>
+    <select id="operasi">
+      <option value="+">Tambah (+)</option>
+      <option value="-">Kurang (-)</option>
+      <option value="*">Kali (×)</option>
+      <option value="/">Bagi (÷)</option>
+      <option value="**">Pangkat (^)</option>
+      <option value="%">Modulus (%)</option>
+    </select>
+
+    <label for="nilai2">Angka kedua</label>
+    <input type="text" id="nilai2" placeholder="Masukkan angka kedua">
+
+    <button onclick="hitung()">Hitung</button>
+
+    <div id="hasil">Hasil: -</div>
+  </div>
+
+  <script>
+    function hitung() {
+      let a = parseFloat(document.getElementById("nilai1").value);
+      let b = parseFloat(document.getElementById("nilai2").value);
+      let op = document.getElementById("operasi").value;
+      let hasil;
+
+      if (isNaN(a) || isNaN(b)) {
+        hasil = "⚠️ Masukkan angka yang valid!";
+      } else {
+        switch(op) {
+          case "+": hasil = a + b; break;
+          case "-": hasil = a - b; break;
+          case "*": hasil = a * b; break;
+          case "/": hasil = (b === 0) ? "∞ (bagi 0)" : a / b; break;
+          case "**": hasil = a ** b; break;
+          case "%": hasil = a % b; break;
+          default: hasil = "Operasi tidak dikenal";
+        }
+      }
+
+      document.getElementById("hasil").innerText = "Hasil: " + hasil;
+    }
+  </script>
+</body>
+</html>

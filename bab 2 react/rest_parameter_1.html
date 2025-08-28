@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <title> Belajar JavaScript </title>
+</head>
+
+<body>
+  <button id="myButton">Haii!</button>
+  <h1 id="myH1"></h1>
+  <!-- Rest Parameter -->
+  <script>
+    // function foo(...args) {  //rest_parameter_1.html
+    //   return args;
+    // }
+    // console.log(foo(1, 2, 3)) // [1, 2, 3]
+    // console.log(foo(3, 5, 7, 9)) // [3, 5, 7, 9]
+    // console.log(foo(5, 10, 15, 20, 25, 30)) // [5, 10, 15, 20, 25, 30]
+
+    //rest_parameter_2.html
+    // function tambah(...args) {
+    //   let total = 0;
+    //   for (let angka of args) {
+    //     total += angka;
+    //   }
+    //   return total;
+    // }
+    // console.log(tambah(1, 2, 3)) // 6
+    // console.log(tambah(3, 5, 7, 9)) // 24
+    // console.log(tambah(5, 10, 15, 20, 25, 30)) // 105
+
+    //rest_parameter_3.html
+    // const tambah = (a, b, ...args) => {
+    //   let total = 0;
+    //   for (const angka of args) {
+    //     total += angka;
+    //   }
+    //   return total;
+    // }
+    // console.log(tambah(3, 5, 7, 9)) // 16
+
+    
+    //rest_parameter_desctructuring.html
+    const arr1 = [10, 20, 30, 40, 50];
+    [a, b, ...sisa] = arr1;
+    console.log(a); // 10
+    console.log(b); // 20
+    console.log(sisa); // [30, 40, 50]
+
+  </script>
+</body>
+
+</html>

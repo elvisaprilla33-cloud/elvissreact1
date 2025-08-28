@@ -1,0 +1,32 @@
+<!-- Conditional Operator -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <title> Belajar JavaScript </title>
+</head>
+
+<body>
+  <button id="myButton">belajar yokk</button>
+  <h1 id="myH1"></h1>
+  <script>
+    const user = "Admin";
+    let result = "";
+
+    if (user === "Admin") {
+      result = "Welcome, admin";
+    }
+    else {
+      result = "User not found";
+    }
+
+    console.log(result); // Welcome, admin
+
+  </script>
+</body>
+</html>
+
+<!-- Dalam kode ini, kondisi if else dipakai untuk memeriksa nilai konstanta user. Jika user berisi
+string "Admin", maka variabel result akan diisi string "Welcome, admin". Jika tidak, variabel
+result akan diisi dengan string "User not found". -->

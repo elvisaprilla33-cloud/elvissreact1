@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Daftar Pegawai</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input {
+      margin: 5px;
+      padding: 8px;
+      width: 200px;
+    }
+    button {
+      padding: 8px 16px;
+      margin-top: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Input Pegawai</h2>
+  <form id="formPegawai">
+    <input type="text" id="nama" placeholder="Nama" required>
+    <input type="text" id="nim" placeholder="NIM" required>
+    <input type="text" id="jabatan" placeholder="Jabatan" required>
+    <input type="text" id="usia" placeholder="Usia" required>
+    <input type="text" id="asal" placeholder="Asal" required>
+    <br>
+    <button type="submit">Tambah</button>
+  </form>
+
+  <h2>Daftar Pegawai</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>NIM</th>
+        <th>Jabatan</th>
+        <th>Usia</th>
+        <th>Asal</th>
+      </tr>
+    </thead>
+    <tbody id="tabelPegawai">
+      <!-- Data pegawai akan ditambahkan di sini -->
+    </tbody>
+  </table>
+
+  <script>
+    let no = 1;
+    const form = document.getElementById("formPegawai");
+    const tabel = document.getElementById("tabelPegawai");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById("nama").value;
+      const nim = document.getElementById("nim").value;
+      const jabatan = document.getElementById("jabatan").value;
+      const usia = document.getElementById("usia").value;
+      const asal = document.getElementById("asal").value;
+
+      const row = tabel.insertRow();
+      row.innerHTML = `
+        <td>${no++}</td>
+        <td>${nama}</td>
+        <td>${nim}</td>
+        <td>${jabatan}</td>
+        <td>${usia}</td>
+        <td>${asal}</td>
+      `;
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
+

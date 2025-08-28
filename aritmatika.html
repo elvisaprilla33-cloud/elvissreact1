@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .kalkulator {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      gap: 10px;
+    }
+    input, select, button {
+      padding: 8px;
+      font-size: 16px;
+    }
+    #hasil {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Kalkulator Sederhana</h2>
+
+  <div class="kalkulator">
+    <input type="text" id="nilai1" placeholder="angka 1">
+    <select id="operasi">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">×</option>
+      <option value="/">÷</option>
+      <option value="**">Pangkat</option>
+      <option value="%">Modulus</option>
+    </select>
+    <input type="text" id="nilai2" placeholder="angka 2">
+    <button onclick="hitung()">Hitung</button>
+    <div id="hasil">Hasil: -</div>
+  </div>
+
+  <script>
+    function hitung() {
+      let a = parseFloat(document.getElementById("nilai1").value);
+      let b = parseFloat(document.getElementById("nilai2").value);
+      let op = document.getElementById("operasi").value;
+      let hasil;
+
+      if (isNaN(a) || isNaN(b)) {
+        hasil = "⚠️ Masukkan angka valid!";
+      } else {
+        switch(op) {
+          case "+": hasil = a + b; break;
+          case "-": hasil = a - b; break;
+          case "*": hasil = a * b; break;
+          case "/": hasil = (b === 0) ? "∞ (bagi 0)" : a / b; break;
+          case "**": hasil = a ** b; break;
+          case "%": hasil = a % b; break;
+          default: hasil = "Operasi tidak dikenal";
+        }
+      }
+      document.getElementById("hasil").innerText = "Hasil: " + hasil;
+    }
+  </script>
+</body>
+</html>

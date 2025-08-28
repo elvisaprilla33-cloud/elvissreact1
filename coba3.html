@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Pendaftaran</title>
+  <style>
+    .error { color: red; font-size: 0.9em; }
+    input:invalid { border: 1px solid red; }
+    input:valid { border: 1px solid green; }
+  </style>
+</head>
+<body>
+  <h2>Form Pendaftaran</h2>
+  <form id="form">
+    <label>Username: <input type="text" id="username" /></label>
+    <span class="error" id="usernameError"></span><br><br>
+
+    <label>Password: <input type="password" id="password" /></label>
+    <br><br>
+
+    <label>Ulangi Password: <input type="password" id="confirm" /></label>
+    <span class="error" id="passwordError"></span><br><br>
+
+    <label>Email: <input type="text" id="email" /></label>
+    <span class="error" id="emailError"></span><br><br>
+
+    <label><input type="checkbox" id="agree" /> Saya menyetujui syarat dan ketentuan</label>
+    <span class="error" id="agreeError"></span><br><br>
+
+    <button type="submit">Kirim Data</button>
+  </form>
+
+  <script>
+    document.getElementById("form").onsubmit = function (e) {
+      e.preventDefault(); // Mencegah form terkirim
+
+      let valid = true;
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const confirm = document.getElementById("confirm").value;
+      const email = document.getElementById("email").value;
+      const agree = document.getElementById("agree").checked;
+
+      const usernamePattern = /^[A-Za-z0-9]+$/;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Username
+      if (!usernamePattern.test(username)) {
+        document.getElementById("usernameError").innerText = "Hanya bisa diisi karakter alfanumerik";
+        valid = false;
+      } else {
+        document.getElementById("usernameError").innerText = "";
+      }
+
+      // Password
+      if (password !== confirm) {
+        document.getElementById("passwordError").innerText = "Password tidak sama";
+        valid = false;
+      } else {
+        document.getElementById("passwordError").innerText = "";
+      }
+
+      // Email
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerText = "Format email harus sesuai";
+        valid = false;
+      } else {
+        document.getElementById("emailError").innerText = "";
+      }
+
+      // Checkbox
+      if (!agree) {
+        document.getElementById("agreeError").innerText = "Syarat dan ketentuan harus di setujui";
+        valid = false;
+      } else {
+        document.getElementById("agreeError").innerText = "";
+      }
+
+      if (valid) {
+        alert("Form berhasil dikirim!");
+      }
+    };
+  </script>
+</body>
+</html>

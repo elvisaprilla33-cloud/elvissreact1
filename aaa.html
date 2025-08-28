@@ -1,0 +1,34 @@
+<!-- Contoh struktur HTML yang sesuai -->
+<input type="text" id="username" placeholder="Masukkan username" />
+<button id="submit">Kirim</button>
+<p id="pesan"></p>
+
+<script>
+    // Ambil setiap element, simpan ke variabel
+    let pesan = document.getElementById("pesan");
+    let username = document.getElementById("username");
+    let submit = document.getElementById("submit");
+
+    // Buat regex untuk inputan minimal 6 karakter (huruf dan angka)
+    let pattern = /^[A-Za-z0-9]{6,}$/;
+
+    // Fungsi untuk mengecek username
+    submit.onclick = function () {
+        if (pattern.test(username.value)) {
+            pesan.innerHTML = "Username sesuai";
+            pesan.className = "betul"; // misalnya CSS .betul { color: green; }
+        } else {
+            pesan.innerHTML = "Username tidak valid (minimal 6 karakter)";
+            pesan.className = "salah"; // misalnya CSS .salah { color: red; }
+        }
+    };
+</script>
+<style>
+  .betul {
+    color: green;
+  }
+
+  .salah {
+    color: red;
+  }
+</style>

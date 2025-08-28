@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    background-color: #A2AF9B;
+}
+.container{
+    width: 90vw;
+    max-width: 600px;
+    padding: 2cm 1.5cm;
+    background-color: #ffffff;
+    margin: 1cm auto;
+    border-radius: 0.5cm;
+}
+h4{
+    font-size: 5cm;
+}
+.input-section{
+    margin: 0.5cm 0;
+}
+label.error-message{
+    
+}

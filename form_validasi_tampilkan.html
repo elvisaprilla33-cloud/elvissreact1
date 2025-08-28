@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Pendaftaran</title>
+  <style>
+    body {
+      font-family: Arial;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+    .betul {
+      color: green;
+    }
+    input {
+      display: block;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Pendaftaran</h2>
+  <label>Username:</label>
+  <input type="text" id="username">
+  <div id="pesanUsername" class="error"></div>
+
+  <label>Password:</label>
+  <input type="password" id="password">
+
+  <label>Ulangi Password:</label>
+  <input type="password" id="password2">
+  <div id="pesanPassword" class="error"></div>
+
+  <label>Email:</label>
+  <input type="text" id="email">
+  <div id="pesanEmail" class="error"></div>
+
+  <button id="submit">Kirim</button>
+
+  <hr>
+  <h3>Hasil Input:</h3>
+  <div id="hasil"></div>
+
+  <script>
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const password2 = document.getElementById("password2");
+    const email = document.getElementById("email");
+
+    const pesanUsername = document.getElementById("pesanUsername");
+    const pesanPassword = document.getElementById("pesanPassword");
+    const pesanEmail = document.getElementById("pesanEmail");
+
+    const hasil = document.getElementById("hasil");
+    const submit = document.getElementById("submit");
+
+    submit.onclick = function () {
+      let valid = true;
+      hasil.innerHTML = ""; // Reset hasil
+
+      // Cek username minimal 6 huruf alfanumerik
+      const userPattern = /^[A-Za-z0-9]{6,}$/;
+      if (!userPattern.test(username.value)) {
+        pesanUsername.textContent = "Username minimal 6 karakter alfanumerik";
+        valid = false;
+      } else {
+        pesanUsername.textContent = "";
+      }
+
+      // Cek password sama
+      if (password.value !== password2.value) {
+        pesanPassword.textContent = "Password tidak sama";
+        valid = false;
+      } else {
+        pesanPassword.textContent = "";
+      }
+
+      // Cek email
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value)) {
+        pesanEmail.textContent = "Format email salah";
+        valid = false;
+      } else {
+        pesanEmail.textContent = "";
+      }
+
+      // Kalau semua valid, tampilkan hasil
+      if (valid) {
+        hasil.innerHTML = `
+          <p><strong>Username:</strong> ${username.value}</p>
+          <p><strong>Email:</strong> ${email.value}</p>
+        `;
+      }
+    };
+  </script>
+
+</body>
+</html>
