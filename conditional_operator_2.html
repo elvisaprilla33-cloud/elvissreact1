@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <title> Belajar JavaScript </title>
+</head>
+
+<body>
+  <button id="myButton">belajar yokk</button>
+  <h1 id="myH1"></h1>
+  <script>
+    const input = "100";
+
+    const result1 = Number.isInteger(input) ? "valid" : "invalid";
+    console.log(result1); // invalid
+
+    const result2 = (typeof input === "string") ? "valid" : "invalid";
+    console.log(result2); // valid
+
+  </script>
+</body>
+</html>
+
+<!-- typeof input === "string".
+Dalam JavaScript, typeof adalah operator khusus yang mengembalikan string dari jenis tipe
+data suatu variabel / konstanta. -->

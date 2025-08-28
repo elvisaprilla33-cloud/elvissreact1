@@ -1,0 +1,37 @@
+<!-- Jika memakai conditional operator, perintahnya menjadi lebih singkat: -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <title> Belajar JavaScript </title>
+</head>
+
+<body>
+  <button id="myButton">belajar yokk</button>
+  <h1 id="myH1"></h1>
+  <script>
+    const user = "Admin";
+    const result = (user === "Admin") ? "Welcome, admin" : "User not found";
+
+    console.log(result); // Welcome, admin
+
+    //const user = "Rudi";
+    //const result = (user === "Admin") ? "Welcome, admin" : "User not found";
+
+    //console.log(result); // User not found
+  </script>
+</body>
+
+</html>
+
+<!-- Penulisan conditional operator mengikuti format berikut:
+<variabel penampung> = <kondisi yang diperiksa> : <nilai kembalian jika kondisi
+terpenuhi (true)> ? <nilai kembalian jika kondisi tidak terpenuhi (false)>
+Dalam contoh di atas, konstanta result akan berisi string "Welcome, admin" karena kondisi
+user === "Admin" menghasilkan nilai true.
+Namun jika kondisi yang diperiksa menghasilkan false (tidak terpenuhi), konstanta result
+akan di isi string "User not found":  -->
+
+<!-- Kondisi yang bisa diperiksa tidak hanya operasi perbandingan saja, tapi juga bisa hasil
+pemanggilan function, selama function itu mengembalikan boolean true atau false: -->
