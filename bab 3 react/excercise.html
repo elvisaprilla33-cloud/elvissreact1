@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan React List Menu</title>
+</head>
+<body>
+  <h1>Belajar React</h1>
+
+  <div id="root"></div>
+
+  <!-- React & ReactDOM versi 18 dari CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <script>
+    const myMenu = React.createElement(
+      'ul',
+      {},
+      [
+        React.createElement(
+          'li',
+          { key: 'a' },
+          React.createElement('a', { href: 'https://id.wikipedia.org/wiki/Espreso', target: '_blank' }, 'Espresso')
+        ),
+        React.createElement(
+          'li',
+          { key: 'b' },
+          React.createElement('a', { href: 'https://id.wikipedia.org/wiki/Kapucino', target: '_blank' }, 'Cappuccino')
+        ),
+        React.createElement(
+          'li',
+          { key: 'c' },
+          React.createElement('a', { href: 'https://id.wikipedia.org/wiki/Moka', target: '_blank' }, 'Moccacino')
+        )
+      ]
+    );
+
+    // Render ke #root
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(myMenu);
+  </script>
+</body>
+</html>
+

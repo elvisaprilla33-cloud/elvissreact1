@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover</title>
+</head>
+<body>
+  <h1>Belajar React</h1>
+
+  <div id="root"></div>
+  <div id="foo"></div>
+
+  <!-- React & ReactDOM versi 18 dari CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <script>
+    // Elemen React berupa teks
+    const myElement = React.createElement('h1', null, 'Hello React');
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(myElement);
+
+    // Elemen React berupa gambar
+    const myPic = React.createElement('img', { src: 'img/kucing.jpg', alt: 'Kucing Imut', width: '200' });
+    const foo = ReactDOM.createRoot(document.getElementById('foo'));
+    foo.render(myPic);
+
+    // Debug di console
+    console.log("React Element myElement:", myElement);
+    console.log("React Element myPic:", myPic);
+  </script>
+</body>
+</html>

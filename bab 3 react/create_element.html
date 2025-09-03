@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover</title>
+</head>
+<body>
+  <h1>Belajar React</h1>
+
+  <!-- React & ReactDOM dari CDN (biar aman selalu ada) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <script>
+    // Membuat elemen React
+    const myElement = React.createElement("h1", { id: "judul" }, "Hello React");
+
+    // Cek di console
+    console.log(myElement);
+
+    // Kalau mau lihat props saja
+    console.log("Props:", myElement.props);
+  </script>
+</body>
+</html>
+

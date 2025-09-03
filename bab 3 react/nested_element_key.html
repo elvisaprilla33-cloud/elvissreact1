@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover</title>
+</head>
+<body>
+  <h1>Belajar React</h1>
+
+  <div id="root"></div>
+
+  <!-- React & ReactDOM versi 18 dari CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+  <script>
+    // Elemen React berupa list menu dengan key
+    const myMenu = React.createElement(
+      'ul',
+      {},
+      [
+        React.createElement('li', { key: 'a' }, 'Espresso'),
+        React.createElement('li', { key: 'b' }, 'Cappuccino'),
+        React.createElement('li', { key: 'c' }, 'Moccacino')
+      ]
+    );
+
+    // Render ke root (React 18)
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(myMenu);
+
+    // Debug di console
+    console.log("React Element myMenu:", myMenu);
+  </script>
+</body>
+</html>
