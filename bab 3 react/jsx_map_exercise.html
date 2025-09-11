@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover - Tabel Mahasiswa</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React & Babel via CDN -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Script React -->
+  <script type="text/babel">
+    const mahasiswas = [
+      {
+        nama: "Elina",
+        umur: 19,
+        jurusan: "Teknik Informatika"
+      },
+      {
+        nama: "Ando",
+        umur: 18,
+        jurusan: "Sistem Informasi"
+      },
+      {
+        nama: "Jelin",
+        umur: 19,
+        jurusan: "Ilmu Komunikasi"
+      }
+    ];
+
+    const myElement = (
+      <table border="1" cellPadding="5" style={{ borderCollapse: "collapse" }}>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Umur</th>
+            <th>Jurusan</th>
+          </tr>
+        </thead>
+        <tbody>
+          {mahasiswas.map((mhs, index) => (
+            <tr key={index}>
+              <td>{mhs.nama}</td>
+              <td>{mhs.umur}</td>
+              <td>{mhs.jurusan}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+
+    ReactDOM.render(myElement, document.getElementById('root'));
+  </script>
+</body>
+</html>
+

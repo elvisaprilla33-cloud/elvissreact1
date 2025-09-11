@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <title> Belajar JavaScript </title>
+</head>
+
+<body>
+  <button id="myButton">belajar yokk</button>
+  <h1 id="myH1"></h1>
+  <!-- Asynchronous JavaScript (Promise / Async - Await) -->
+  <script>
+    // const getUser = () => "Rudi";
+
+    // console.log("Start..."); // Start...
+    // console.log(getUser());  // Rudi
+    // console.log("Finish");   // Finish
+
+
+    //asynchronous_js_problem_1.html
+    // const getUser = () => {
+    //   setTimeout(() => "Rudi", 2000);
+    // }
+    // console.log("Start...");
+    // console.log(getUser());
+    // console.log("Finish");
+
+    //asynchronous_js_problem_2.html. untuk memperjelas problrm diatas
+    const getUser = () => {
+      setTimeout(() => {
+        console.log("processing done!");
+        return "Rudi";
+      }, 2000);
+    }
+    console.log("Start...");
+    console.log(getUser());
+    console.log("Finish");
+    // Perbedaan dari kode sebelumnya ada di baris 3, dimana saya menambah satu perintah console.log() ke dalam fungsi setTimeout(). 
+
+  </script>
+</body>
+
+</html>

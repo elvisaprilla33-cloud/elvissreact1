@@ -1,0 +1,33 @@
+<!-- Percabangan Kondisi -->
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React & Babel via CDN -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Script React -->
+  <script type="text/babel">
+    let nilai = 38;
+    let pesan;
+
+    if (nilai > 70) {
+      pesan = "Selamat, anda lolos";
+    } else {
+      pesan = "Maaf, silahkan coba lagi";
+    }
+
+    const myElement = <h1>{pesan}</h1>;
+
+    ReactDOM.render(myElement, document.getElementById('root'));
+  </script>
+</body>
+</html>

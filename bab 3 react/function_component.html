@@ -1,0 +1,39 @@
+<!-- bab 5, Membuat Functional Component -->
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover - Functional Components</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React & Babel -->
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.js"></script>
+
+  <script type="text/babel">
+    function JudulReact() {
+      return <h1>Sedang Belajar React</h1>;
+    }
+
+    function JudulJavaScript() {
+      return <h1>Sedang Belajar JavaScript</h1>;
+    }
+
+    function MyComponent() {
+      return (
+        <div>
+          <JudulReact />
+          <hr />
+          <JudulJavaScript />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<MyComponent />, document.getElementById('root'));
+  </script>
+</body>
+</html>

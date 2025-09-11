@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Mahasiswa</title>
+  <style>
+    section {
+      display: flex;
+      /* Membuat item berbaris */
+      flex-wrap: wrap;
+      /* Pindah ke baris baru jika layar sempit */
+      justify-content: flex-start;
+      /* Foto mulai dari kiri */
+      gap: 20px;
+      /* Jarak antar foto */
+      text-align: center;
+    }
+
+    figure {
+      margin: 0;
+      /* Hilangkan margin default figure */
+    }
+
+    figure img {
+      border-radius: 10px;
+      /* Membuat sudut foto membulat */
+      object-fit: cover;
+      /* Agar proporsi tetap rapi */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script src="js/react.development.js"></script>
+  <script src="js/react-dom.development.js"></script>
+  <script src="js/babel.js"></script>
+  <script type="text/babel">
+    // Data mahasiswa
+    //   const mahasiswa = {
+    //     id: "01",
+    //     nama: "Ziva Magnolya",
+    //     jurusan: "Seni Musik",
+    //     pasFoto: "p1.jpg"
+    //   };
+
+    //   // Komponen Mahasiswa
+    //   class Mahasiswa extends React.Component {
+    //     render() {
+    //       return (
+    //         <figure>
+    //           <img src={"img/" + mahasiswa.pasFoto} alt={mahasiswa.nama}
+    //             width="200"
+    //             height="200"/>
+    //           <figcaption>{mahasiswa.nama} ({mahasiswa.jurusan})</figcaption>
+    //         </figure>
+    //       );
+    //     }
+    //   }
+
+    //   // Render komponen ke root
+    //   ReactDOM.render(<Mahasiswa />, document.getElementById('root'));
+
+    // class_component_array.html
+    // const mahasiswas = [
+    //   { id: "01", nama: "Ziva Magnolya", jurusan: "Seni Musik", pasFoto: "p1.jpg" },
+    //   { id: "02", nama: "Keysa Levronka", jurusan: "Seni Musik", pasFoto: "p2.jpg" },
+    //   { id: "03", nama: "Prilly Latuconsina", jurusan: "Ilmu Komunikasi", pasFoto: "p3.jpg" }
+    // ];
+
+    // class DaftarMahasiswa extends React.Component {
+    //   render() {
+    //     return (
+    //       <React.Fragment>
+    //         <h1>Daftar Mahasiswa - Universitas Ilkoom</h1>
+    //         <hr />
+    //         <section>
+    //           {mahasiswas.map(mahasiswa => (
+    //             <figure key={mahasiswa.id}>
+    //               <img src={"img/" + mahasiswa.pasFoto} alt={mahasiswa.nama}
+    //                 width="200"
+    //                 height="200" />
+    //               <figcaption>{mahasiswa.nama} ({mahasiswa.jurusan})</figcaption>
+    //             </figure>
+    //           ))}
+    //         </section>
+    //       </React.Fragment>
+    //     );
+    //   }
+    // }
+
+    // ReactDOM.render(<DaftarMahasiswa />, document.getElementById('root'));
+
+
+    // class_component_mahasiswa_nested.html
+    const mahasiswas = [
+      { id: "01", nama: "Ziva Magnolya", jurusan: "Seni Musik", pasFoto: "p1.jpg" },
+      { id: "02", nama: "Keysa Levronka", jurusan: "Seni Musik", pasFoto: "p2.jpg" },
+      { id: "03", nama: "Prilly Latuconsina", jurusan: "Ilmu Komunikasi", pasFoto: "p3.jpg" },
+      { id: "01", nama: "Nadin Amizah", jurusan: "Sastra Inggris", pasFoto: "p4.jpg" }
+    ];
+
+    class Mahasiswa extends React.Component {
+      render() {
+        return mahasiswas.map(mahasiswa => (
+          <figure key={mahasiswa.id}>
+            <img src={"img/" + mahasiswa.pasFoto} alt={mahasiswa.nama}
+              width="200"
+              height="200" />
+            <figcaption>{mahasiswa.nama} ({mahasiswa.jurusan})</figcaption>
+          </figure>
+        ));
+      }
+    }
+
+    class DaftarMahasiswa extends React.Component {
+      render() {
+        return (
+          <React.Fragment>
+            <h1>Daftar Mahasiswa - Universitas Dunia</h1>
+            <hr />
+            <section>
+              <Mahasiswa />
+            </section>
+          </React.Fragment>
+        );
+      }
+    }
+
+    ReactDOM.render(<DaftarMahasiswa />, document.getElementById('root'));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!-- Array Processing -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- React & Babel via CDN -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Script React -->
+  <!-- <script type="text/babel">
+    let kopis = ["Espresso", "Cappuccino", "Moccacino"];
+
+    const myElement = (
+      <ul>
+        {kopis.map(kopi => <li>{kopi}</li>)}
+      </ul>
+    );
+
+    ReactDOM.render(myElement, document.getElementById('root'));
+  </script> -->
+  <!-- tambahin key={kopi} di <li> karena React biasanya kasih warning kalau list dibuat tanpa key. -->
+
+  <!-- jsx_map_solution_1.html -->
+  <!-- <script type="text/babel">
+    let kopis = ["Espresso", "Cappuccino", "Moccacino"];
+    const myElement = (
+      <ul>
+        {kopis.map((kopi, i) => <li key={i}>{kopi}</li>)}
+      </ul>
+    );
+    ReactDOM.render(myElement, document.getElementById('root'));
+  </script> -->
+
+  <!-- jsx_map_solution_2.html -->
+   <script type="text/babel">
+    let kopis = ["Espresso", "Cappuccino", "Moccacino"];
+    const myElement = (
+      <ul>
+        {kopis.map((kopi) => <li key={kopi}>{kopi}</li>)}
+      </ul>
+    );
+    ReactDOM.render(myElement, document.getElementById('root'));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Uncover - Event Button</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React & Babel via CDN -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Script React -->
+  <!-- <script type="text/babel">
+    const myElement = (
+      <button onClick={() => alert("Tombol di klik")}>
+        Click me
+      </button>
+    );
+
+    ReactDOM.render(myElement, document.getElementById('root'));
+  </script> -->
+
+
+  <!-- jsx_event_function.html -->
+  <script type="text/babel">
+    const onClickHandler = () => alert("Tombol di klik");
+
+    const myElement = (
+      <button onClick={onClickHandler}>
+        Click me
+      </button>
+    );
+
+    ReactDOM.render(myElement, document.getElementById('root'));
+  </script>
+</body>
+</html>
